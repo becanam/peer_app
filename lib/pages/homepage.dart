@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               ),
 
               //mentors' profiles
-              const MentorsProfiles(),
+              MentorsProfiles(),
 
               //hot posts text
               Padding(
