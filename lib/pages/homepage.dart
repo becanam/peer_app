@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yonsei_project/utilities/appstyle.dart';
+import 'package:yonsei_project/utilities/hot_posts_list.dart';
 import '../utilities/hot_posts_widget.dart';
 import '../utilities/mentors_profile_view.dart';
 
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 237, 234, 234),
         body: SafeArea(
           child: Column(
             children: [
@@ -87,14 +88,14 @@ class _HomePageState extends State<HomePage> {
                 child:
                     Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   Text(
-                    "HOT 계시물 >",
+                    "HOT 계시판 >",
                     style: appstyle(30, Colors.black, FontWeight.w600),
                   ),
                 ]),
               ),
 
               //hot posts
-              const HotPostsWidget()
+              HotPostsWidget(hotpost: hotPostsList[0])
             ],
           ),
         ));
