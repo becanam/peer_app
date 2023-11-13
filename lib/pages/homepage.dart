@@ -39,24 +39,32 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     //settings icon
-                    const CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 22,
-                        child: Icon(
-                          Icons.settings_rounded,
-                          color: Colors.black,
-                          size: 35,
-                        )),
+                    CircleAvatar(
+                      backgroundColor: Colors.black.withOpacity(0.1),
+                      radius: 24,
+                      child: const CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 22,
+                          child: Icon(
+                            Icons.settings_rounded,
+                            color: Colors.black,
+                            size: 35,
+                          )),
+                    ),
 
                     //notification icon
-                    const CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 22,
-                        child: Icon(
-                          Icons.notifications_rounded,
-                          color: Colors.black,
-                          size: 35,
-                        ))
+                    CircleAvatar(
+                      backgroundColor: Colors.black.withOpacity(0.1),
+                      radius: 24,
+                      child: const CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 22,
+                          child: Icon(
+                            Icons.notifications_rounded,
+                            color: Colors.black,
+                            size: 35,
+                          )),
+                    )
                   ],
                 ),
               ),
