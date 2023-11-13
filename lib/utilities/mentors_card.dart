@@ -89,7 +89,7 @@ class MentorCard extends StatelessWidget {
                 InkWell(
                   child: Container(
                     height: 30,
-                    width: 110,
+                    width: 95,
                     decoration: BoxDecoration(
                         color: const Color(0xff32DACE),
                         borderRadius: BorderRadius.circular(7),
@@ -100,7 +100,7 @@ class MentorCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "매칭되었습니다!",
+                            "채팅 시작하기",
                             style:
                                 appstyle(13, Colors.black, FontWeight.normal),
                           ),
