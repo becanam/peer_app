@@ -8,17 +8,17 @@ import 'package:yonsei_project/pages/people_page.dart';
 import 'package:yonsei_project/pages/profile_page.dart';
 import 'package:yonsei_project/utilities/bottom_nav.dart';
 import 'package:yonsei_project/utilities/interests_list.dart';
-import 'package:yonsei_project/utilities/mentors_list.dart';
+import 'package:yonsei_project/utilities/mentees_list.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   final List<Widget> pageList = [
-    HomePage(),
-    BoardPage(),
-    PeoplePage(),
-    ChatPage(),
-    ProfilePage(mentor: mentorsList[0], interest: interestsList[0],)
+    const HomePage(),
+    const BoardPage(),
+    const PeoplePage(),
+    const ChatPage(),
+    ProfilePage(mentee: menteesList[0], interest: interestsList[0],)
   ];
 
   @override

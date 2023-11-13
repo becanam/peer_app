@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:yonsei_project/utilities/appstyle.dart';
-import 'package:yonsei_project/utilities/mentees_list.dart';
+import 'package:yonsei_project/utilities/mentors_list.dart';
 
 class MenteesListView extends StatelessWidget {
-  final Mentee mentee;
+  final Mentor mentor;
   const MenteesListView({
     super.key,
-    required this.mentee,
+    required this.mentor,
   });
 
   @override
@@ -21,7 +21,7 @@ class MenteesListView extends StatelessWidget {
         child: ListView.builder(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: menteesList.length,
+            itemCount: mentorsList.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -52,13 +52,13 @@ class MenteesListView extends StatelessWidget {
                               backgroundColor: Colors.black,
                               child: CircleAvatar(
                                 radius: 45,
-                                backgroundImage: AssetImage(mentee.profilepic),
+                                backgroundImage: AssetImage(mentorsList[index].profilepic),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Chip(
-                                label: Text("매칭 수락",
+                                label: Text("매칭 요청",
                                     style: appstyle(
                                         15, Colors.black, FontWeight.bold,
                                         height: 1.5)),
@@ -72,29 +72,38 @@ class MenteesListView extends StatelessWidget {
                           width: 30,
                         ),
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("이름: ${mentee.name}",
-                                  style: appstyle(13, Colors.black, FontWeight.bold,
-                                      height: 1.6)),
-                              Text("나이: ${mentee.age.toString()}",
-                                  style: appstyle(13, Colors.black, FontWeight.bold,
-                                      height: 1.6)),
-                              Text("직업: ${mentee.job}",
-                                  softWrap: true,
-                                  maxLines: 2,
-                                  style: appstyle(13, Colors.black, FontWeight.bold,
-                                      height: 1.6)),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Text("직업: ${mentee.description}",
-                                    softWrap: true,
-                                    maxLines: 2,
-                                    style: appstyle(10, Colors.black, FontWeight.normal,
-                                        height: 1.6)),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("이름: ${mentorsList[index].name}",
+                                      style: appstyle(13, Colors.black, FontWeight.bold,
+                                          height: 1.6)),
+                                  Text("나이: ${mentorsList[index].age.toString()}",
+                                      style: appstyle(13, Colors.black, FontWeight.bold,
+                                          height: 1.6)),
+                                  Text("직업: ${mentorsList[index].job}",
+                                      softWrap: true,
+                                      maxLines: 2,
+                                      style: appstyle(13, Colors.black, FontWeight.bold,
+                                          height: 1.6)),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: Text(mentorsList[index].description,
+                                    overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                        style: appstyle(13, Colors.black, FontWeight.normal,
+                                            height: 1.6)),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         )
                       ],

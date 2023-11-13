@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yonsei_project/utilities/appstyle.dart';
 import 'package:yonsei_project/utilities/mentees_list.dart';
 import 'package:yonsei_project/utilities/mentees_view.dart';
+import 'package:yonsei_project/utilities/mentors_list.dart';
 
 class PeoplePage extends StatefulWidget {
   const PeoplePage({super.key});
@@ -13,7 +14,7 @@ class PeoplePage extends StatefulWidget {
 class _PeoplePageState extends State<PeoplePage> {
   List<String> items = [
     "요청",
-    "나의 멘티",
+    "나의 멘토",
   ];
 
   int current = 0;
@@ -29,8 +30,13 @@ class _PeoplePageState extends State<PeoplePage> {
           child: Column(
             children: [
               SizedBox(
+                height: 30,
+                child: Text("MY MENTORS",
+                style: appstyle(20, Colors.black, FontWeight.bold),),
+              ),
+              SizedBox(
                 width: double.infinity,
-                height: 80,
+                height: 70,
                 child: Center(
                   child: ListView.builder(
                       itemCount: items.length,
@@ -84,7 +90,7 @@ class _PeoplePageState extends State<PeoplePage> {
               ),
               Expanded(
                   child:
-                      Center(child: MenteesListView(mentee: menteesList[0]))),
+                      Center(child: MenteesListView(mentor: mentorsList[0]))),
             ],
           ),
         ),

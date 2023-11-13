@@ -71,13 +71,25 @@ class MentorCard extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 80,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 9,
+                    right: 20,
+                    left: 20,
+                    bottom: 9
+                  ),
+                  child: SizedBox(
+                    height: 60,
+                    child: Text(mentor.description,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,
+                    style: appstyle(14, Color.fromARGB(255, 46, 45, 45), FontWeight.normal, height: 1.3),),
+                  ),
                 ),
                 InkWell(
                   child: Container(
                     height: 30,
-                    width: 170,
+                    width: 110,
                     decoration: BoxDecoration(
                         color: const Color(0xff32DACE),
                         borderRadius: BorderRadius.circular(7),
@@ -88,14 +100,10 @@ class MentorCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Start a Chat!",
+                            "매칭되었습니다!",
                             style:
                                 appstyle(13, Colors.black, FontWeight.normal),
                           ),
-                          const Icon(
-                            Icons.chat_bubble_outline_rounded,
-                            size: 20,
-                          )
                         ],
                       ),
                     ),
