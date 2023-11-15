@@ -71,40 +71,44 @@ class MentorCard extends StatelessWidget {
                     )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 9,
-                    right: 20,
-                    left: 20,
-                    bottom: 9
-                  ),
-                  child: SizedBox(
-                    height: 60,
-                    child: Text(mentor.description,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 3,
-                    style: appstyle(14, Color.fromARGB(255, 46, 45, 45), FontWeight.normal, height: 1.3),),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      top: 9,
+                      right: 20,
+                      left: 20,
+                      bottom: 9
+                    ),
+                    child: SizedBox(
+                      height: 60,
+                      child: Text(mentor.description,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      style: appstyle(14, Color.fromARGB(255, 46, 45, 45), FontWeight.normal, height: 1.3),),
+                    ),
                   ),
                 ),
-                InkWell(
-                  child: Container(
-                    height: 30,
-                    width: 95,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff32DACE),
-                        borderRadius: BorderRadius.circular(7),
-                        border: Border.all(width: 0.6, color: Colors.black)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "채팅 시작하기",
-                            style:
-                                appstyle(13, Colors.black, FontWeight.normal),
-                          ),
-                        ],
+                Expanded(
+                  child: InkWell(
+                    child: Container(
+                      height: 30,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: const Color(0xff32DACE),
+                          borderRadius: BorderRadius.circular(7),
+                          border: Border.all(width: 0.6, color: Colors.black)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "채팅 시작하기",
+                              style:
+                                  appstyle(13, Colors.black, FontWeight.normal),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
